@@ -2,11 +2,8 @@
 
 ## Telepítés
 ````
-npm i git+ssh://git@gitlab.neosoft.hu:668/NP/neo-calendar.git
+npm i https://github.com/sanya6456/Calendar-library.git
 ````
-
-## Függőségek
-- **Fontawesome 5.15.4** (Javítva lesz, hogy ne kelljen!)
 
 ## Használata
 
@@ -24,7 +21,7 @@ const testClass = new NeoCalendar('.selector', {
             "url": "https://www.google.hu"
         }
     ]
-});
+}, 'hu');
 
 testClass.render();
 ````
