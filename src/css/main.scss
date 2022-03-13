@@ -1,0 +1,195 @@
+.neo-calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    user-select: none;
+    @media only screen and (min-width: 550px) {
+      width: 500px;
+    }
+    .year-wrapper {
+      width: calc(100% - 20px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+      .year {
+        font-size: 34px;
+        font-weight: bold;
+      }
+      .arrow-left, .arrow-right{
+        height: 26px;
+        width: auto;
+        cursor: pointer;
+      }
+    }
+    .days, .months {
+      width: 100%;
+      display: flex;
+      text-align: center;
+      .day, .month {
+        padding: 7px 7px;
+        white-space: nowrap;
+        overflow: hidden;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .days >.day {
+      width: calc(14.28% - 5px);
+      height: 66px;
+      margin-right: 5px;
+    }
+    .months {
+      justify-content: space-between;
+      > .active {
+        position: relative;
+        z-index: 10;
+        color: #ffffff;
+        &:after {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 35px;
+          height: 35px;
+          background-color: #B38A20;
+          border-radius: 100%;
+        }
+      }
+      .month {
+        cursor: pointer;
+        width: calc(8.33% - 3px);
+        height: 38px;
+        margin-right: 3px;
+      }
+    }
+    .days{
+      > .active {
+        position: relative;
+        z-index: 10;
+        color: #ffffff;
+        &:after {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 35px;
+          height: 35px;
+          background-color: #073371;
+          border-radius: 100%;
+        }
+      }
+    }
+    .body {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      .day {
+        width: calc(14.28% - 3px);
+        text-align: center;
+        height: 66px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 3px;
+        margin-top: 3px;
+      }
+      .day:not(.has-event) {
+        pointer-events: none;
+      }
+      .empty-day {
+        background-color: rgba(0,0,0, .05);
+      }
+    }
+    .bg-event {
+      background-color: rgba(#B38A20, .25);
+    }
+    .has-event {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: background-color .2s ease-in-out;
+      &:hover {
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0, .1);
+          transition: background-color .2s ease-in-out;
+        }
+      }
+    }
+  
+    // list view
+    .list-wrapper {
+      padding-left: 0;
+      width: 100%;
+      max-width: 100%;
+      .list-item {
+        list-style: none;
+        padding: 10px 20px;
+        background-color: rgba(0,0,0, .05);
+        border-radius: 8px;
+        box-shadow: 1px 2px 5px rgba(0,0,0, .15);
+        color: #B38A20;
+        margin-bottom: 16px;
+        display: block;
+        font-weight: 600;
+        a {
+          text-decoration: none;
+          color: #B38A20;
+        }
+      }
+      .list-item-date {
+        color: #6c757d;
+        font-size: 12px;
+        font-weight: 900;
+      }
+    }
+    .list-header-wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      .day-name, .year, .month, .day {
+        margin-bottom: 0;
+        font-size: 19px;
+        padding-right: 5px;
+        @media only screen and (min-width: 576px) {
+          font-size: 22px;
+        }
+      }
+      .arrow-right-block {
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+      }
+      .arrow-left-block {
+        display: block;
+        margin-left: 0;
+        margin-right: auto;
+      }
+      .arrow-left, .arrow-right {
+        height: 21px;
+        width: auto;
+        cursor: pointer;
+        @media only screen and (min-width: 576px) {
+          height: 26px;
+        }
+      }
+    }
+    .no-events-text {
+      text-align: center;
+    }
+  }
+  

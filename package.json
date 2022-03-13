@@ -1,0 +1,35 @@
+{
+  "name": "neocalendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.bundle.js",
+  "exports": {
+    ".": "./dist/index.bundle.js",
+    "./style": "./dist/style.bundle.js"
+  },
+  "scripts": {
+    "build": "webpack",
+    "test": "jest",
+    "watch": "webpack --watch"
+  },
+  "author": "NeoSoft (Benkei Sándor)",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "jest": "^27.5.1",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "css-loader": "^6.6.0",
+    "style-loader": "^3.3.1"
+  },
+  "jest":{
+    "testEnvironment": "jsdom"
+  }
+}
